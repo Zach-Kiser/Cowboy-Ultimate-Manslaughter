@@ -34,7 +34,8 @@ public class Shoot : MonoBehaviour
         {
             GameObject newBullet = Instantiate(bullet, FiringPoint.transform.position, FiringPoint.transform.rotation);
             newBullet.SetActive(true);
-            newBullet.GetComponent<Rigidbody>().AddForce(FiringPoint.transform.forward * 1000);
+            newBullet.tag = "Bullet";
+            newBullet.GetComponent<Rigidbody>().AddForce(FiringPoint.transform.forward * 1500);
         }
         audioFile.Play();
     }
