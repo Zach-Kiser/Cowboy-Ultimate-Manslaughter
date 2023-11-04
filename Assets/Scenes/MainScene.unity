@@ -542,6 +542,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 108361521}
   m_SourcePrefab: {fileID: 100100000, guid: 93f8a13fb89985e4f8d0d8ecff94969a, type: 3}
+--- !u!1 &414804880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9014170785475729474, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1716516309}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &449545734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1572,6 +1577,7 @@ MonoBehaviour:
   bullet: {fileID: 1408702724}
   FiringPoint: {fileID: 1740273481}
   audioFile: {fileID: 1241397054}
+  leftController: {fileID: 414804880}
 --- !u!82 &1241397054
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1628,7 +1634,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

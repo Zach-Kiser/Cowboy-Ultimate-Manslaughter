@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem.XR;
 
 public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject FiringPoint;
     public AudioSource audioFile;
+    public GameObject leftController;
     private int bullets;
     private bool canShoot;
 
@@ -24,43 +26,37 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && bullets > 0 && canShoot)
         {
-            Fire();
+            // Prints distance. It's pretty strict right now. We can change it later.
+            Debug.Log(Vector3.Distance(leftController.transform.position, transform.position));
+
+            if (Vector3.Distance(leftController.transform.position, transform.position) < 0.2)
+            {
+                StartCoroutine(Fire(bullets));
+            }
+
+            else
+            {
+                StartCoroutine(Fire(1));
+            }
         }
     }
 
-    public void Fire()
+    IEnumerator Fire(int amount)
     {
-        // Kiser, what is this code for??
-
-        // int bullets = 1;
-        // if (Vector3.Distance(GameObject.Find("Right Controller").transform.position, GameObject.Find("Left Controller").transform.position) < .04)
-        // {
-        //     bullets = 3;
-        // }
-
-        // for (int i = 0; i < bullets; i++)
-
-        if (bullets > 0 && canShoot)
+        for (int i = 0; i < amount; i++)
         {
+            canShoot = false;
             GameObject newBullet = Instantiate(bullet, FiringPoint.transform.position, FiringPoint.transform.rotation);
             newBullet.SetActive(true);
             newBullet.tag = "Bullet";
             newBullet.GetComponent<Rigidbody>().AddForce(FiringPoint.transform.forward * 1500);
             audioFile.Play();
-            StartCoroutine(fireDelay(newBullet));
             bullets--;
+            
+            yield return new WaitForSeconds(0.5f);
+            canShoot = true;
         }
-    }
-
-    // Function to deal with trigger spam.
-    IEnumerator fireDelay(GameObject bullet)
-    {
-        canShoot = false;
-        yield return new WaitForSeconds(0.75f);
-        // Fixed infinite bullets being made.
-        Destroy(bullet);
-        canShoot = true;
     }
 }
