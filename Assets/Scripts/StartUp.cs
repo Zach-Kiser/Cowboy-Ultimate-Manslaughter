@@ -21,9 +21,13 @@ public class StartUp : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            Debug.Log("Test");
-            SceneManager.LoadScene("MainScene");
+            StartCoroutine(startup());
         }
+    }
+
+    IEnumerator startup() {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("MainScene");
     }
 
     
