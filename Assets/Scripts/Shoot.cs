@@ -41,6 +41,11 @@ public class Shoot : MonoBehaviour
                 StartCoroutine(Fire(1));
             }
         }
+
+        //Temp Reload Function
+        if (Input.GetButtonDown("Fire2")) {
+            bullet = 6;
+        }
     }
 
     IEnumerator Fire(int amount)
