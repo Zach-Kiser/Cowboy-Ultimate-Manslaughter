@@ -44,7 +44,7 @@ public class Shoot : MonoBehaviour
 
         //Temp Reload Function
         if (Input.GetButtonDown("Fire2")) {
-            bullet = 6;
+            bullets = 6;
         }
     }
 
