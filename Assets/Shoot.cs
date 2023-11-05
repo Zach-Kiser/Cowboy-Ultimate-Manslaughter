@@ -56,6 +56,7 @@ public class Shoot : MonoBehaviour
             bullets--;
             
             yield return new WaitForSeconds(0.5f);
+            Destroy(newBullet);
             canShoot = true;
         }
     }
