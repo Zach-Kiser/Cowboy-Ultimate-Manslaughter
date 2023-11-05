@@ -19,8 +19,11 @@ public class StartUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Test");
-        SceneManager.LoadScene("MainScene");
+        if (other.CompareTag("Bullet"))
+        {
+            Debug.Log("Test");
+            SceneManager.LoadScene("MainScene");
+        }
     }
 
     
