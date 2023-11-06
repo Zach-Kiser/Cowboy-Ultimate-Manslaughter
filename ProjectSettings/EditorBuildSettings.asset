@@ -6,8 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Alley.unity
+    guid: c4fcb68417b88b64eb0643ae0428c746
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 69f4c46f6d1cc4decb6884e4a754facb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 16fa563160f07854cbeb38dacb9795f7, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ee86c5ec497f6bc47a1eacd5cde24b94, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 08921874f2b0944faa80b21c20495548, type: 2}
