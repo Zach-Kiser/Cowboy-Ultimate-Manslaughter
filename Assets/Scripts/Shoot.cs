@@ -10,28 +10,27 @@ public class Shoot : MonoBehaviour
     public GameObject FiringPoint;
     public AudioSource audioFile;
     public GameObject leftController;
-    private int bullets;
+    public GameObject muzzleFlash;
+    public int bullets;
     private bool canShoot;
 
     // Start is called before the first frame update
     void Start()
     {
-        // Made it where you only have 6 bullets.
-        // However, this means there needs to be some sort
-        // of reload functionality.
-        bullets = 6;
         canShoot = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        // TODO: Fix bug with Fan the Hammer. Currently, in the Alley Scene, I gave the player 100 bullets.
+        // However, with our current implementation of Fan the Hammer, that just shoots out 100 bullets no
+        // matter what. We need some kind of system to check if the player has left the original "Fan the
+        // Hammer" distance AND if they have stop holding the trigger (fire1).
         if (Input.GetButtonDown("Fire1") && bullets > 0 && canShoot)
         {
-            // Prints distance. It's pretty strict right now. We can change it later.
-            Debug.Log(Vector3.Distance(leftController.transform.position, transform.position));
-
-            if (Vector3.Distance(leftController.transform.position, transform.position) < 0.2)
+            if ((Vector3.Distance(leftController.transform.position, transform.position) < 0.2) && Input.GetButton("Fire1"))
             {
                 StartCoroutine(Fire(bullets));
             }
@@ -50,19 +49,26 @@ public class Shoot : MonoBehaviour
 
     IEnumerator Fire(int amount)
     {
-        for (int i = 0; i < amount; i++)
-        {
+        // while (Input.GetButton("Fire1") && amount > 0)
+        // {
             canShoot = false;
+
             GameObject newBullet = Instantiate(bullet, FiringPoint.transform.position, FiringPoint.transform.rotation);
             newBullet.SetActive(true);
             newBullet.tag = "Bullet";
             newBullet.GetComponent<Rigidbody>().AddForce(FiringPoint.transform.forward * 1500);
+
             audioFile.Play();
             bullets--;
+
+            muzzleFlash.SetActive(true);
+            yield return new WaitForSeconds(0.15f);
+            muzzleFlash.SetActive(false);
+
             
             yield return new WaitForSeconds(0.5f);
             Destroy(newBullet);
             canShoot = true;
-        }
+        // }
     }
 }
