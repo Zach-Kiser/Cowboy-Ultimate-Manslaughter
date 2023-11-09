@@ -1347,6 +1347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ddfa22b0ad4f45fbb999d8b98e926cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerInputActionReference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   bullet: {fileID: 1467697043994425449}
   FiringPoint: {fileID: 6569359622647587567}
   audioFile: {fileID: 5460135268654799775}

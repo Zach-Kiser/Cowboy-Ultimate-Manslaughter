@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1485,10 +1485,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ddfa22b0ad4f45fbb999d8b98e926cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerInputActionReference: {fileID: 0}
   bullet: {fileID: 1408702724}
   FiringPoint: {fileID: 1740273481}
   audioFile: {fileID: 1241397054}
   leftController: {fileID: 0}
+  muzzleFlash: {fileID: 0}
+  bullets: 0
 --- !u!82 &1241397054
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2446,6 +2449,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3863316423029123636, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.065
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518141529472504976, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
+      propertyPath: triggerInputActionReference
+      value: 
+      objectReference: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 6535409905254655992, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
