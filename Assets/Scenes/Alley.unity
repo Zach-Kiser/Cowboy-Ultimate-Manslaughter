@@ -1697,6 +1697,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5403939657f9c4344aa18cf515342734, type: 3}
+--- !u!4 &1354037662 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5403939657f9c4344aa18cf515342734, type: 3}
+  m_PrefabInstance: {fileID: 1354037661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1379556572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1862,6 +1867,7 @@ Transform:
   - {fileID: 1842811338}
   - {fileID: 222680200}
   - {fileID: 746816376}
+  - {fileID: 1354037662}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1428400356
@@ -2012,6 +2018,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7841934154230071085, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776086256073920356, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
+      value: 0.0037498474
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776086256073920356, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776086256073920356, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776086256073920356, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
