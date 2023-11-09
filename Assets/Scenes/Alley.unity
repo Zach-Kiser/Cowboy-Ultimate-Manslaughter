@@ -1667,11 +1667,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5403939657f9c4344aa18cf515342734, type: 3}
---- !u!1 &1373102131 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 820339980858914613, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
-  m_PrefabInstance: {fileID: 1469762855}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1379556572
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1877,14 +1872,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2239870129361773267, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0341
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239870129361773267, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0324
+      objectReference: {fileID: 0}
     - target: {fileID: 5518141529472504976, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
       propertyPath: bullets
       value: 10000
       objectReference: {fileID: 0}
-    - target: {fileID: 5518141529472504976, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
-      propertyPath: muzzleFlash
-      value: 
-      objectReference: {fileID: 1373102131}
     - target: {fileID: 6535409905254655992, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
       propertyPath: m_LocalPosition.x
       value: -42.29

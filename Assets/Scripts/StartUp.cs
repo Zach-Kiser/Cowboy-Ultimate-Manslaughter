@@ -21,6 +21,7 @@ public class StartUp : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
+            other.GetComponent<TrailRenderer>().enabled = false;
             StartCoroutine(startup());
         }
     }
