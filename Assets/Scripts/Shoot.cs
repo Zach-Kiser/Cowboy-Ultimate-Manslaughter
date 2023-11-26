@@ -15,8 +15,7 @@ public class Shoot : MonoBehaviour
     public AudioSource audioFile;
     public GameObject leftController;
     public GameObject muzzleFlash;
-    public GameObject cylinder;
-    public GameObject clinder2;
+    public GameObject rotator;
 
     public int bullets;
     private bool canShoot;
@@ -71,25 +70,16 @@ public class Shoot : MonoBehaviour
         audioFile.Play();
         bullets--;
 
-        //cylinder.transform.RotateAround(center.transform.position, Vector3.right, 10f);
-
-        // Couldn't get rotation to work, so my current solution is to just
-        // show and hide a slightly rotated cylinder
-        if (cylinder.activeSelf)
-        {
-            cylinder.SetActive(false);
-            clinder2.SetActive(true);
-        }
-        else
-        {
-            cylinder.SetActive(true);
-            clinder2.SetActive(false);
-        }
-
         muzzleFlash.SetActive(true);
         yield return new WaitForSeconds(0.15f);
         muzzleFlash.SetActive(false);
 
+        for (int i = 0; i < 30; i++)
+        {
+            rotator.transform.Rotate(0f, 0f, 1.533f, Space.Self);
+            yield return new WaitForSeconds(0.01f);
+
+        }
 
         yield return new WaitForSeconds(0.5f);
         Destroy(newBullet);
