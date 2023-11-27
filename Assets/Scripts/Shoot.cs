@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
+using TMPro;
+using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
@@ -14,19 +16,22 @@ public class Shoot : MonoBehaviour
     public GameObject FiringPoint;
     public AudioSource audioFile;
     public GameObject leftController;
-    public GameObject rightController;
     public GameObject muzzleFlash;
     public GameObject rotator;
+    public TextMeshProUGUI textmeshPro;
 
     public int bullets;
     private bool canShoot;
     private bool canFan;
+    public Slider coolDownSlider;
 
 
     void Start()
     {
         canShoot = true;
         canFan = true;
+        textmeshPro.SetText("{}", bullets);
+        coolDownSlider.value = 1;
     }
 
     // Update is called once per frame
@@ -56,17 +61,19 @@ public class Shoot : MonoBehaviour
         {
             bullets = 6;
         }
+        if (!canFan)
+        {
+            coolDownSlider.value += Time.deltaTime * .1f;
+        }
     }
 
     // Make hammer false if you want there to be a delay between shots
     IEnumerator Fire(int amount, bool hammer)
     {
-        canShoot = false;
-        canFan = false;
-
         for (int i = 0; i < amount; i++)
         {
-
+            canShoot = false;
+            canFan = false;
             // Creates Bullet, and sends it forward.
             GameObject newBullet = Instantiate(bullet, FiringPoint.transform.position, FiringPoint.transform.rotation);
             newBullet.SetActive(true);
@@ -75,6 +82,7 @@ public class Shoot : MonoBehaviour
 
             audioFile.Play();
             bullets--;
+            textmeshPro.SetText("{}", bullets);
 
             // Muzzleflash animation.
             muzzleFlash.SetActive(true);
@@ -92,14 +100,16 @@ public class Shoot : MonoBehaviour
             else
                 yield return new WaitForSeconds(2f);
 
-            Destroy(newBullet);
+            Destroy(newBullet);        
         }
         // Create 10 second cooldown after fan the hammer
         if (hammer)
         {
+            coolDownSlider.value = 0f;
             yield return new WaitForSeconds(10f);
-            canFan = true;
         }
         canShoot = true;
+        canFan = true;
+
     }
 }
