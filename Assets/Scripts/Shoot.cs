@@ -20,7 +20,6 @@ public class Shoot : MonoBehaviour
     public int bullets;
     private bool canShoot;
 
-    // Start is called before the first frame update
     void Start()
     {
         canShoot = true;
@@ -29,20 +28,22 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // TODO: Currently fan the hammer works if you just hold the trigger down.
+        // Make it where if the hands are close enough, fan the hammer will engage.
+        // It shouldn't engage in ANY other way.
 
         float triggerValue = triggerInputActionReference.action.ReadValue<float>();
 
-        // TODO: Fix bug with Fan the Hammer. Currently, in the Alley Scene, I gave the player 100 bullets.
-        // However, with our current implementation of Fan the Hammer, that just shoots out 100 bullets no
-        // matter what. We need some kind of system to check if the player has left the original "Fan the
-        // Hammer" distance AND if they have stop holding the trigger (fire1).
+        // Checks that the gun can fire currectly.
         if (triggerValue > 0.2 && bullets > 0 && canShoot)
         {
+            // Checks if hands are close enough to do the "fan the hammer."
             if ((Vector3.Distance(leftController.transform.position, transform.position) < 0.2) && Input.GetButton("Fire1"))
             {
                 StartCoroutine(Fire(bullets));
             }
 
+            // Single shot
             else
             {
                 StartCoroutine(Fire(1));
@@ -58,10 +59,9 @@ public class Shoot : MonoBehaviour
 
     IEnumerator Fire(int amount)
     {
-        // while (Input.GetButton("Fire1") && amount > 0)
-        // {
         canShoot = false;
 
+        // Creates Bullet, and sends it forward.
         GameObject newBullet = Instantiate(bullet, FiringPoint.transform.position, FiringPoint.transform.rotation);
         newBullet.SetActive(true);
         newBullet.tag = "Bullet";
@@ -70,20 +70,20 @@ public class Shoot : MonoBehaviour
         audioFile.Play();
         bullets--;
 
+        // Muzzleflash animation.
         muzzleFlash.SetActive(true);
         yield return new WaitForSeconds(0.15f);
         muzzleFlash.SetActive(false);
 
+        // Cylinder rotation animation.
         for (int i = 0; i < 30; i++)
         {
             rotator.transform.Rotate(0f, 0f, 1.533f, Space.Self);
             yield return new WaitForSeconds(0.01f);
-
         }
 
         yield return new WaitForSeconds(0.5f);
         Destroy(newBullet);
         canShoot = true;
-        // }
     }
 }
