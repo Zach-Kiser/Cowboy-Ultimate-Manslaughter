@@ -30,7 +30,7 @@ public class CowBoyShoot : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (canShoot && (Random.value < 0.01f) && (timer > 3f))
+        if (canShoot && (Random.value < 0.01f) && (timer > 5f))
         {
             StartCoroutine(Fire(1));
         }

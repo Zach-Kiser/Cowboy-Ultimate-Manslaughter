@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18018535, g: 0.22559482, b: 0.30677685, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -898,8 +898,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.29, y: 0.26, z: 0.11}
-  m_Center: {x: 0, y: 0.08, z: 0}
+  m_Size: {x: 0.29, y: 0.36, z: 0.17}
+  m_Center: {x: 0, y: 0.14, z: 0}
 --- !u!114 &474512533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1275,6 +1275,10 @@ PrefabInstance:
     - target: {fileID: 1232480130339723381, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 237
+      objectReference: {fileID: 0}
+    - target: {fileID: 2458117865838618617, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
+      propertyPath: m_MoveSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3413728680573826524, guid: 4a6a77bfaca3b014b8c79088601ac024, type: 3}
       propertyPath: m_UseGravity
@@ -3272,7 +3276,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.29, y: 0.26, z: 0.11}
+  m_Size: {x: 0.29, y: 0.35, z: 0.2}
   m_Center: {x: 0, y: 0.08, z: 0}
 --- !u!1 &1701200796
 GameObject:
