@@ -14,6 +14,7 @@ public class CowBoyShoot : MonoBehaviour
     public GameObject bullet;
     public GameObject FiringPoint;
     public AudioSource audioFile;
+    public GameObject player;
 
     public int bullets;
     private bool canShoot;
@@ -36,6 +37,7 @@ public class CowBoyShoot : MonoBehaviour
     {
         canShoot = false;
 
+        FiringPoint.transform.LookAt(player.transform);
         GameObject newBullet = Instantiate(bullet, FiringPoint.transform.position, FiringPoint.transform.rotation);
         newBullet.SetActive(true);
         // make the bullets massive so you can see them
