@@ -1728,7 +1728,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 820339980858914613}
   rotator: {fileID: 2620662388001093404}
   textmeshPro: {fileID: 1868533361007869630}
-  bullets: 10000
+  bullets: 6
   coolDownSlider: {fileID: 349303530348824617}
 --- !u!82 &5460135268654799775
 AudioSource:
@@ -8705,10 +8705,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 19026177839507540, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3413728680573826524}
+      addedObject: {fileID: 1683904374174316898}
     - targetCorrespondingSourceObject: {fileID: 19026177839507540, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1683904374174316898}
+      addedObject: {fileID: 3413728680573826524}
     - targetCorrespondingSourceObject: {fileID: 19026177839507540, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7290405460053501135}
@@ -8718,6 +8718,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 19026177839507540, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
   m_PrefabInstance: {fileID: 2829426065404883040}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1683904374174316898
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812423435672541236}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.010261011, y: 0.010261014, z: 0.05147901}
+  m_Center: {x: -0.015019599, y: 0.050438117, z: 0.019303378}
 --- !u!54 &3413728680573826524
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8745,27 +8766,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1683904374174316898
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2812423435672541236}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.010261011, y: 0.010261014, z: 0.05147901}
-  m_Center: {x: -0.015019599, y: 0.050438117, z: 0.019303378}
 --- !u!96 &7290405460053501135
 TrailRenderer:
   serializedVersion: 3

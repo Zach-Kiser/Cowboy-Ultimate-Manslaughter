@@ -34,7 +34,7 @@ public class LocationTrigger : MonoBehaviour
                 SceneManager.LoadScene("Alley");
             }
             score.text = "Score: " + (int.Parse(oldScore) + 100);
-            opponent.GetComponent<CowBoyShoot>().bullets = 0;
+            opponent.GetComponent<CowBoyShoot>().enabled = false;
             List<GameObject> allChildren = GetAllChildren(opponent);
             foreach (GameObject child in allChildren)
             {
