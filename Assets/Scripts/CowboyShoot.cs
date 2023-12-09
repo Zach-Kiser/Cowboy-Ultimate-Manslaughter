@@ -15,6 +15,7 @@ public class CowBoyShoot : MonoBehaviour
     public GameObject FiringPoint;
     public AudioSource audioFile;
     public GameObject player;
+    private float timer = 0;
 
     public int bullets;
     private bool canShoot;
@@ -27,7 +28,9 @@ public class CowBoyShoot : MonoBehaviour
 
     void Update()
     {
-        if (canShoot && Random.value < .01)
+        timer += Time.deltaTime;
+
+        if (canShoot && (Random.value < 0.01f) && (timer > 3f))
         {
             StartCoroutine(Fire(1));
         }
