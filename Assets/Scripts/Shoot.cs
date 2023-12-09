@@ -60,6 +60,7 @@ public class Shoot : MonoBehaviour
         if (Input.GetButtonDown("Fire2"))
         {
             bullets = 6;
+            textmeshPro.SetText("{}", bullets);
         }
         if (!canFan)
         {
@@ -100,7 +101,7 @@ public class Shoot : MonoBehaviour
             else
                 yield return new WaitForSeconds(2f);
 
-            Destroy(newBullet);        
+            Destroy(newBullet);
         }
         // Create 10 second cooldown after fan the hammer
         if (hammer)
