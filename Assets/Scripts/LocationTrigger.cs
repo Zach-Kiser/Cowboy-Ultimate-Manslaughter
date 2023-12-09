@@ -28,12 +28,12 @@ public class LocationTrigger : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            // string oldScore = score.text.Split("Score: ")[1];
-            // if (oldScore == "500")
-            // {
-            //     SceneManager.LoadScene("Alley");
-            // }
-            // score.text = "Score: " + (int.Parse(oldScore) + 100);
+            string oldScore = score.text.Split("Score: ")[1];
+            if (oldScore == "500")
+            {
+                 SceneManager.LoadScene("Alley");
+            }
+            score.text = "Score: " + (int.Parse(oldScore) + 100);
             List<GameObject> allChildren = GetAllChildren(opponent);
             foreach (GameObject child in allChildren)
             {
