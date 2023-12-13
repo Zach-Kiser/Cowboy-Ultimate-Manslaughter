@@ -1807,8 +1807,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Welcome to the Practice mode!\nShoot button on back of right controller\n                        
-    to move\nPress the                to reload\nHold left hand over gun and hold
-    a to fan the hammer\nPractice Shooting cans, Shoot the can behind you to quit"
+    to move\nPress the                to reload\nHold left hand over gun and fire
+    to fan the hammer\nPractice Shooting cans, Shoot the can behind you to quit"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40bc4db712bf3c648a245870b1617944, type: 2}
   m_sharedMaterial: {fileID: 7997976197469065088, guid: 40bc4db712bf3c648a245870b1617944, type: 2}

@@ -3534,8 +3534,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Welcome to the wild west! \nShoot button on back of right controller\n                        
-    to move\nPress the                to reload\nHold left hand over gun and hold
-    a to fan the hammer\nShoot the right can to go to practice Mode\nShoot the middle
+    to move\nPress the                to reload\nHold left hand over gun and fire
+    to fan the hammer\nShoot the right can to go to practice Mode\nShoot the middle
     can to enter shootout mode"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 40bc4db712bf3c648a245870b1617944, type: 2}

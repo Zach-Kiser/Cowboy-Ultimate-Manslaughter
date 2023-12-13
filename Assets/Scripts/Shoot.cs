@@ -112,7 +112,7 @@ public class Shoot : MonoBehaviour
         if (hammer)
         {
             coolDownSlider.value = 0f;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2f);
             reload();
         }
         canShoot = true;
