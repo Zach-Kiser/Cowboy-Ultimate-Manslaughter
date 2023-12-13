@@ -5572,7 +5572,7 @@ Transform:
   m_GameObject: {fileID: 6569359622647587567}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.041, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0654, z: 0}
   m_LocalScale: {x: 0.12382597, y: 0.022716563, z: 0.028633296}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7124,7 +7124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -631, y: 237}
+  m_AnchoredPosition: {x: -236, y: -28.2}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349303530348824617
@@ -8661,15 +8661,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 794965158903345902, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.7
+      value: 0.0335
       objectReference: {fileID: 0}
     - target: {fileID: 794965158903345902, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0323
       objectReference: {fileID: 0}
     - target: {fileID: 794965158903345902, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.2
+      value: -0.0675
       objectReference: {fileID: 0}
     - target: {fileID: 794965158903345902, guid: b7ae10a17e67dc74eade85509a3d702f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8737,7 +8737,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.010261011, y: 0.010261014, z: 0.05147901}
+  m_Size: {x: 0.04, y: 0.04, z: 0.05147901}
   m_Center: {x: -0.015019599, y: 0.050438117, z: 0.019303378}
 --- !u!54 &3413728680573826524
 Rigidbody:
@@ -8747,7 +8747,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2812423435672541236}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -8765,7 +8765,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!96 &7290405460053501135
 TrailRenderer:
   serializedVersion: 3

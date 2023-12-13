@@ -46,7 +46,7 @@ public class Shoot : MonoBehaviour
             if ((Vector3.Distance(leftController.transform.position, transform.position) < 0.2) && Input.GetButton("Fire1"))
             {
                 if (canFan)
-                    StartCoroutine(Fire(6, true));
+                    StartCoroutine(Fire(bullets, true));
             }
 
             // Single shot
@@ -57,15 +57,20 @@ public class Shoot : MonoBehaviour
         }
 
         //Temp Reload Function
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && canFan)
         {
-            bullets = 6;
-            textmeshPro.SetText("{}", bullets);
+            reload();
         }
         if (!canFan)
         {
-            coolDownSlider.value += Time.deltaTime * .1f;
+            coolDownSlider.value += Time.deltaTime * .2f;
         }
+    }
+
+    void reload()
+    {
+        bullets = 6;
+        textmeshPro.SetText("{}", bullets);
     }
 
     // Make hammer false if you want there to be a delay between shots
@@ -79,7 +84,7 @@ public class Shoot : MonoBehaviour
             GameObject newBullet = Instantiate(bullet, FiringPoint.transform.position, FiringPoint.transform.rotation);
             newBullet.SetActive(true);
             newBullet.tag = "Bullet";
-            newBullet.GetComponent<Rigidbody>().AddForce(FiringPoint.transform.forward * 1500);
+            newBullet.GetComponent<Rigidbody>().AddForce(FiringPoint.transform.forward * 3000);
 
             audioFile.Play();
             bullets--;
@@ -99,15 +104,16 @@ public class Shoot : MonoBehaviour
             if (hammer)
                 yield return new WaitForSeconds(0.005f);
             else
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(1.5f);
 
             Destroy(newBullet);
         }
-        // Create 10 second cooldown after fan the hammer
+        // Create 5 second cooldown after fan the hammer
         if (hammer)
         {
             coolDownSlider.value = 0f;
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(5f);
+            reload();
         }
         canShoot = true;
         canFan = true;
