@@ -29,7 +29,7 @@ public class LocationTrigger : MonoBehaviour
         if (other.CompareTag("Bullet"))
         {
             string oldScore = score.text.Split("Score: ")[1];
-            if (oldScore == "500")
+            if (oldScore == "400")
             {
                 SceneManager.LoadScene("Alley");
             }
