@@ -43,7 +43,7 @@ public class Shoot : MonoBehaviour
         if (triggerValue > 0.2 && bullets > 0 && canShoot)
         {
             // Checks if hands are close enough to do the "fan the hammer."
-            if ((Vector3.Distance(leftController.transform.position, transform.position) < 0.2) && Input.GetButton("Fire1"))
+            if ((Vector3.Distance(leftController.transform.position, transform.position) < 0.1))
             {
                 if (canFan)
                     StartCoroutine(Fire(bullets, true));
